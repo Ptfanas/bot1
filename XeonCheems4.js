@@ -190,10 +190,6 @@ const {
  let _darahOrg = JSON.parse(fs.readFileSync('./storage/user/darah.json'))
 
 //Database omther\\
-let xeonysticker = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/sticker.json'));
-let xeonyaudio = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/audio.json'));
-let xeonyimage = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/image.json'));
-let xeonyvideo = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/video.json'));
 let autosticker = JSON.parse(fs.readFileSync('./database/autosticker.json'));
 const _autostick = JSON.parse(fs.readFileSync('./database/autostickpc.json'));
 let banUser = JSON.parse(fs.readFileSync('./database/banUser.json'));
@@ -747,36 +743,6 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 XeonBotInc.sendMessage(from, {text:`\`\`\`「 Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 } else {
 }
-
-                //auto reply by xeon
-  //if (Autoreply) //remove forwad slashes to make it autoreply on off
-        for (let anji of xeonysticker){
-				if (budy === anji){
-					result = fs.readFileSync(`./XeonMedia/sticker/${anji}.webp`)
-					XeonBotInc.sendMessage(m.chat, { sticker: result }, { quoted: m })
-					}
-			}
-			  //if (Autoreply) //remove forwad slashes to make it autoreply on off
-			for (let anju of xeonyaudio){
-				if (budy === anju){
-					result = fs.readFileSync(`./XeonMedia/audio/${anju}.mp3`)
-					XeonBotInc.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
-					}
-			}
-			  //if (Autoreply) //remove forwad slashes to make it autoreply on off
-			for (let anjh of xeonyimage){
-				if (budy === anjh){
-					result = fs.readFileSync(`./XeonMedia/image/${anjh}.jpg`)
-					XeonBotInc.sendMessage(m.chat, { image: result }, { quoted: m })
-					}
-			}
-			  //if (Autoreply) //remove forwad slashes to make it autoreply on off
-					for (let anjh of xeonyvideo){
-				if (budy === anjh){
-					result = fs.readFileSync(`./XeonMedia/video/${anjh}.mp4`)
-					XeonBotInc.sendMessage(m.chat, { video: result }, { quoted: m })
-					}
-				  }
 
 //emoji 
 const emote = (satu, dua) => {
