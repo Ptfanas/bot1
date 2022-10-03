@@ -2150,7 +2150,6 @@ case 'dare':
     "What is the biggest lie you ever told your parents",
     "Who is your celebrity crush",
     "Whats the strangest dream you have ever had",
-    "do you play pubg, if you then send ur id number"
 ]
               const xeontruth = truth[Math.floor(Math.random() * truth.length)]
               buffer = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
@@ -2207,7 +2206,8 @@ if (isBanChat) return reply(mess.banChat)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'remov').ethen((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+        kicked_msg = `User Kicked ✅`
+		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'remov').ethen((res) => reply(kicked_msg)).catch((err) => reply(jsonformat(err)))
 	}
 	break
 	case 'add': {
@@ -2217,7 +2217,8 @@ if (isBanChat) return reply(mess.banChat)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
 		let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+        added_msg = `User Added ✅`
+		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(added_msg)).catch((err) => reply(jsonformat(err)))
 	}
 	break
 	case 'promote': {
@@ -2238,7 +2239,8 @@ if (isBanChat) return reply(mess.banChat)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+        demoted_msg = `User Demoted To Normal Member ✅`
+		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => reply(demoted_msg)).catch((err) => reply(jsonformat(err)))
 	}
 	break
         case 'block': {
@@ -2246,7 +2248,8 @@ if (isBanChat) return reply(mess.banChat)
 if (isBanChat) return reply(mess.banChat)
 		if (!isCreator) return replay(`${mess.owner}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await XeonBotInc.updateBlockStatus(users, 'block').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+        msg = `User Blocked ✅`
+		await XeonBotInc.updateBlockStatus(users, 'block').then((res) => reply(msg)).catch((err) => reply(jsonformat(err)))
 	}
 	break
         case 'unblock': {
@@ -2254,7 +2257,8 @@ if (isBanChat) return reply(mess.banChat)
 if (isBanChat) return reply(mess.banChat)
 		if (!isCreator) return replay(`${mess.owner}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await XeonBotInc.updateBlockStatus(users, 'unblock').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+        msg = `User Unblocked ✅`
+		await XeonBotInc.updateBlockStatus(users, 'unblock').then((res) => reply(msg)).catch((err) => reply(jsonformat(err)))
 	}
 	break
 	    case 'setname': case 'setgcname': case 'setsubject': {
@@ -8609,54 +8613,149 @@ break
 case 'alive': case 'panel': case 'list': case 'menu': case 'help': case '?': {
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-	                let btn = [{
-                                urlButton: {
-                                    displayText: 'YouTube 🍒',
-                                    url: `${websitex}`
-                                }
-                            }, {
-                                callButton: {
-                                    displayText: 'Script 🍜',
-                                    url: `${botscript}`
-                                }
-                            }, {
-                                quickReplyButton: {
-                                    displayText: 'All Menu 🍱',
-                                    id: 'allmenu'
-                                }
-                            }, {
-                                quickReplyButton: {
-                                    displayText: 'List Menu 🍢',
-                                    id: 'command'
-                                }  
-                            }, {
-                                quickReplyButton: {
-                                    displayText: 'Owner 🤣',
-                                    id: 'owner'
-                                }
-                            }]
-                         let setbot = db.data.settings[botNumber]
-                        if (setbot.templateImage) {
-                        XeonBotInc.send5ButImg(m.chat, menulist, global.botname, global.thumb, btn, global.thumb)
-                        } else if (setbot.templateGif) {
-                        XeonBotInc.send5ButGif(m.chat, menulist, global.botname, global.vidmenu, btn, global.thumb)
-                        } else if (setbot.templateVid) {
-                        XeonBotInc.send5ButVid(m.chat, anu, global.botname, global.vidmenu, btn, global.thumb)
-                        } else if (setbot.templateVideo) {
-                        XeonBotInc.send5ButVid(m.chat, menulist, global.botname, global.vidmenu, btn, global.thumb)
-                        /////////} else if (setbot.templateMsg) {
-                        /////////XeonBotInc.send5ButMsg(m.chat, menulist, global.botname, btn)
-                        } else if (setbot.templateDocument) {
-                        let buttonmenu = [
-        	{ urlButton: { displayText: `YouTube 🍒`, url : `${websitex}` } },
-            { urlButton: { displayText: `Script 🍜`, url: `${botscript}` } },
-            { quickReplyButton: { displayText: `All Menu 🍱`, id: 'allmenu'} },
-            { quickReplyButton: { displayText: `List Menu 🍢`, id: 'command'} },
-            { quickReplyButton: { displayText: `Owner 🤣`, id: 'owner'} }
-        	]
-        	XeonBotInc.sendMessage(m.chat, { caption: menulist, document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), mimetype: `${docs}`, fileName: `${ownername}`, templateButtons: buttonmenu, footer: `${botname}`, mentionedJid: [m.sender] })
-                        }
-                     }
+
+msg = `┌─❖
+│「 Hi 👋 」
+└┬❖ 「 ${pushname} 」
+┌┤✑  How Are You? 😄
+│└────────────┈ ⳹
+│
+└─「 𝘽𝙊𝙏 𝙄𝙉𝙁𝙊 」       
+│𝗦𝗽𝗲𝗲𝗱 : ${latensie.toFixed(4)} miliseconds
+│𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
+│𝗕𝗼𝘁 𝗡𝗮𝗺𝗲 :${global.botname}
+│𝗢𝘄𝗻𝗲𝗿 𝗡𝗮𝗺𝗲 : ${global.ownername}
+│𝗢𝘄𝗻𝗲𝗿 𝗡𝗼. : ${global.owner}
+│𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
+└─────────────┈ ⳹
+
+╠═══════✪「Commands List」✪═══════╣
+
+╠═══════✪「For Groups」✪═══════╣
+grouplink - To Get Group Link
+setgcpp [image] - To Change Group Picture
+setname [text] - To Change Group Name
+setdesc [text] - To Change Group Description
+resetgrouplink - To Reset Group Link
+add [user number with country code] - To Add Someone
+kick [reply/tag] - To Remove Someone 
+hidetag [text] - To Repost Something on Behalf of Bot
+tagall [text] - To Tag all members of a group
+antilinkall [on/off] - Anti-Link Protection
+antivirus [on/off] - Anti-Virus Protection
+antitoxic [on/off] - Anti-Toxic Protection
+antiwame [on/off]
+promote [reply/tag] - To Promote Someone to Admin
+demote [reply/tag] - To Demote Someone to Admin
+react [reply emoji]  - To React Someone on behalf of Bot
+
+╠═══════✪「Filter For Logos」✪═══════╣
+candy
+blackpinkneon
+deepsea
+scifi
+fiction
+berry
+fruitjuice
+biscuit
+wood
+chocolate
+matrix
+blood
+halloween
+wicker
+darkgold
+firework
+skeleton
+sand
+glue
+leaves
+magma
+lava
+rock
+bloodglas
+underwater
+textmaker
+honey
+ice
+watercolor
+multicolor
+snow
+harrypot
+harrypotter
+brokenglass
+waterpipe
+spooky
+circuit
+metallic
+demon
+sparklechristmas
+christmas
+3dchristmas
+3dbox
+waterdrop
+lion2
+papercut
+transformer
+neondevil
+3davengers
+3dstone
+3dstone2
+summertime
+thunder
+window
+graffiti
+graffitibike
+pornhub
+glitch
+blackpink
+glitch2
+glitch3
+3dspace
+lion
+3dneon
+greenneon
+bokeh
+holographic
+bear
+wolf
+joker
+dropwater
+dropwater2
+thewall
+neonlight
+natural
+carbon
+pencil
+blackpink2
+neon
+neonlight2
+toxic
+strawberry
+discovery
+1917
+sci_fi
+ancient
+fabric
+hoorror
+whitebear
+juice
+batman
+multicolor
+collwall
+wonderful
+cool
+sketch
+marvel
+foggy
+writing
+halloweenfire
+halloween
+watercolor
+classic`
+reply(msg)
+
+}
             break
                 case 'command': {
                 	   if (isBan) return reply(mess.ban)
