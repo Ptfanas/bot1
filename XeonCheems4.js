@@ -468,11 +468,11 @@ message: {
 	
 	//group target \\
 const reply = (teks) => {
-           XeonBotInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `${ownername}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./XeonMedia/theme/cheemspic.jpg`),"sourceUrl": `${linkz}`}}}, { quoted: m})
+           XeonBotInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": `${global.botname}`,"body": `${ownername}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./XeonMedia/theme/cheemspic.jpg`),"sourceUrl": `${linkz}`}}}, { quoted: m})
         }
         
         const replay = (teks) => {
-            XeonBotInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `${ownername}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./XeonMedia/theme/cheemspic.jpg`),"sourceUrl": `${linkz}`}}}, { quoted: m})
+            XeonBotInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": `${global.botname}`,"body": `${ownername}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./XeonMedia/theme/cheemspic.jpg`),"sourceUrl": `${linkz}`}}}, { quoted: m})
         }
 	
         //Public & Self\\
@@ -1068,7 +1068,7 @@ const latensie = speed() - timestampe
 └─「 𝘽𝙊𝙏 𝙄𝙉𝙁𝙊 」       
 │𝗦𝗽𝗲𝗲𝗱 : ${latensie.toFixed(4)} miliseconds
 │𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
-│𝗕𝗼𝘁 𝗡𝗮𝗺𝗲 : ${global.botname}
+│𝗕𝗼𝘁 𝗡𝗮𝗺𝗲 :${global.botname}
 │𝗢𝘄𝗻𝗲𝗿 𝗡𝗮𝗺𝗲 : ${global.ownername}
 │𝗢𝘄𝗻𝗲𝗿 𝗡𝗼. : ${global.owner}
 │𝗛𝗼𝘀𝘁 𝗡𝗮𝗺𝗲 : ${os.hostname()}
@@ -2225,7 +2225,7 @@ if (isBanChat) return reply(mess.banChat)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'remov').ethen((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
 	case 'add': {
@@ -3505,7 +3505,7 @@ try{
 reply(mess.wait)						
 nyz2 = await fetchJson(`https://myselfff.herokuapp.com/docs/wallpaper/${command}`) 
 nyz3 = await getBuffer(nyz2.list.gambar)
-XeonBotInc.sendMessage(from, {image : nyz3, caption:`By ${global.botname}`}, {quoted:m}) 						
+XeonBotInc.sendMessage(from, {image : nyz3, caption:`By${global.botname}`}, {quoted:m}) 						
 } catch (e) {
 error("Error!")
 }
@@ -4624,7 +4624,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-glitch-text-effect-style-tik-tok-983.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4635,7 +4635,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/3d-box-text-effect-online-880.html", [
     `${q}`,])
-.then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+.then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
 .catch((err) => console.log(err));
 break
 
@@ -4647,7 +4647,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
  maker.textpro("https://textpro.me/dropwater-text-effect-872.html", [
      `${q}`,])
-    .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+    .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
     .catch((err) => console.log(err));
      break
 
@@ -4659,7 +4659,7 @@ if (isBanChat) return reply(mess.banChat)
   reply(mess.wait)
   maker.textpro("https://textpro.me/create-lion-logo-mascot-online-938.html", [
       `${q}`,])
-     .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+     .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
      .catch((err) => console.log(err));
      break
 
@@ -4671,7 +4671,7 @@ if (isBanChat) return reply(mess.banChat)
       reply(mess.wait)
       maker.textpro("https://textpro.me/create-art-paper-cut-text-effect-online-1022.html", [
 `${q}`,])
-         .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+         .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
          .catch((err) => console.log(err));
          break
 
@@ -4683,7 +4683,7 @@ if (isBanChat) return reply(mess.banChat)
       reply(mess.wait)
       maker.textpro("https://textpro.me/create-a-transformer-text-effect-online-1035.html", [
 `${q}`,])
-.then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+.then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
 .catch((err) => console.log(err));
 break
    
@@ -4697,7 +4697,7 @@ if (isBanChat) return reply(mess.banChat)
        teks2 = q.split("|")[1]
        maker.textpro("https://textpro.me/create-harry-potter-text-effect-online-1025.html", [
  `${teks1}`,`${teks2}`])
- .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+ .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
  .catch((err) => console.log(err));
  break
 
@@ -4709,7 +4709,7 @@ if (isBanChat) return reply(mess.banChat)
       reply(mess.wait)
       maker.textpro("https://textpro.me/create-neon-devil-wings-text-effect-online-free-1014.html", [
 `${q}`,])
-         .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+         .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
          .catch((err) => console.log(err));
          break
 
@@ -4721,7 +4721,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/3d-stone-cracked-cool-text-effect-1029.html", [
     `${q}`,])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4733,7 +4733,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-3d-avengers-logo-online-974.html", [
     `${q}`,])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4745,7 +4745,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/online-thunder-text-effect-generator-1031.html", [
     `${q}`,])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
    
@@ -4757,7 +4757,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/write-text-on-foggy-window-online-free-1015.html", [
     `${q}`,])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
    case 'blackpinkneon':
@@ -4767,7 +4767,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-neon-light-blackpink-logo-text-effect-online-1081.html", [
     `${q}`,])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4781,7 +4781,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-a-cool-graffiti-text-on-the-wall-1010.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4796,7 +4796,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/pornhub-style-logo-online-generator-free-977.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4809,7 +4809,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-blackpink-logo-style-online-1001.html", [
     `${q}`,])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4820,7 +4820,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-impressive-glitch-text-effects-online-1027.html", [
     `${q}`,])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4835,7 +4835,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-a-glitch-text-effect-online-free-1026.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4850,7 +4850,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-glitch-text-effect-style-tik-tok-983.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4865,7 +4865,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-space-3d-text-effect-online-985.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4880,7 +4880,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-lion-logo-mascot-online-938.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4893,7 +4893,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-3d-neon-light-text-effect-online-1028.html", [
     `${q}`,])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4906,7 +4906,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/neon-text-effect-online-879.html", [
     `${q}`,])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4919,7 +4919,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/green-neon-text-effect-874.html", [
     `${q}`,])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
    
@@ -4932,7 +4932,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/bokeh-text-effect-876.html", [
     `${q}`,])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
    
@@ -4945,7 +4945,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/holographic-3d-text-effect-975.html", [
     `${q}`,])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4960,7 +4960,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/online-black-and-white-bear-mascot-logo-creation-1012.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4975,7 +4975,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-wolf-logo-galaxy-online-936.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4989,7 +4989,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-logo-joker-online-934.html", [
     `${q}`,])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -5001,7 +5001,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/dropwater-text-effect-872.html", [
     `${q}`,])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
    
@@ -5012,7 +5012,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-a-summer-neon-light-text-effect-online-1076.html", [
     `${q}`,])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -5023,7 +5023,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/neon-light-text-effect-with-galaxy-style-981.html", [
     `${q}`,])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -5034,7 +5034,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/break-wall-text-effect-871.html", [
     `${q}`,])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
    
@@ -5045,7 +5045,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/natural-leaves-text-effect-931.html", [
     `${q}`,])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break 
 
@@ -5056,7 +5056,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/carbon-text-effect-833.html", [
     `${q}`,])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -5067,7 +5067,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-a-sketch-text-effect-online-1044.html", [
     `${q}`,])
-  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
  
@@ -5144,7 +5144,7 @@ if (isBanChat) return reply(mess.banChat)
              if (/1917/.test(command)) link = 'https://textpro.me/1917-style-text-effect-online-980.html'
                 if (/leaves/.test(command)) link = 'https://textpro.me/natural-leaves-text-effect-931.html'           
              let anu = await maker.textpro(link, q)
-                XeonBotInc.sendMessage(m.chat, { image: { url: anu }, caption: `Made by ${global.botname}` }, { quoted: m })
+                XeonBotInc.sendMessage(m.chat, { image: { url: anu }, caption: `Made by${global.botname}` }, { quoted: m })
              }
              break
 
@@ -5628,7 +5628,7 @@ case 'emoji': {
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return reply('Where is the emoji?')
 emoji.get(args.join(" ")).then(async(emoji) => {
-let mese = await XeonBotInc.sendMessage(m.chat, {image:{url:emoji.images[4].url}, caption: `Made by ${global.botname}`}, {quoted:m})
+let mese = await XeonBotInc.sendMessage(m.chat, {image:{url:emoji.images[4].url}, caption: `Made by${global.botname}`}, {quoted:m})
 await XeonBotInc.sendMessage(from, {text:"reply #s to this image to make sticker"}, {quoted:mese})
 })
 }
@@ -6481,7 +6481,7 @@ if (isBanChat) return reply(mess.banChat)
              if (/1917/.test(command)) link = 'https://textpro.me/1917-style-text-effect-online-980.html'
                 if (/leaves/.test(command)) link = 'https://textpro.me/natural-leaves-text-effect-931.html'
              let anu = await maker.textpro(link, q)
-                XeonBotInc.sendMessage(m.chat, { image: { url: anu }, caption: `Made by ${global.botname},For my Darling ` }, { quoted: m })
+                XeonBotInc.sendMessage(m.chat, { image: { url: anu }, caption: `Made by${global.botname},For my Darling ` }, { quoted: m })
              }
              break
             case 'drakorxxx':
@@ -8482,7 +8482,7 @@ reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, 
 case 'sc': case 'script': case 'donate': case 'donate': case 'cekupdate': case 'updatebot': case 'cekbot': case 'sourcecode': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-teks = `*「 ${global.botname} Script 」*\n\nYouTube: ${global.websitex}\nGitHub: ${global.botscript}\n\nDont forget to donate 🍜`
+teks = `*「${global.botname} Script 」*\n\nYouTube: ${global.websitex}\nGitHub: ${global.botscript}\n\nDont forget to donate 🍜`
 let buttons = [
 {buttonId: `menu`, buttonText: {displayText: 'Menu 🌺'}, type: 1}
 ]
