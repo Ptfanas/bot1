@@ -2227,7 +2227,8 @@ if (isBanChat) return reply(mess.banChat)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')
-		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+        promted_msg = `User Promoted To Admin ✅`
+		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(promted_msg)).catch((err) => reply(jsonformat(err)))
 	}
 	break
 	case 'demote': {
@@ -7874,14 +7875,10 @@ if (!args.join(" ")) return reply("What picture are you looking for?")
 try {
 hx.pinterest(args.join(" ")).then(async(res) => {
 imgnyee = res[Math.floor(Math.random() * res.length)]
-let buttons = [
-{buttonId: `pinterest ${args.join(" ")}`, buttonText: {displayText: 'Next Image 👀'}, type: 1}
-]
 let buttonMessage = {
 image: { url: imgnyee },
 caption:  `${global.dogeemoji} Title : ` + args.join(" ") + `\n${global.dogeemoji} Media Url : `+imgnyee,
 footer: `${global.botname}`,
-buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
 title:`${global.botname}`,
@@ -8350,13 +8347,137 @@ RAM: ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
 
 _NodeJS Memory Usaage_
 ${Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v=>v.length)),' ')}: ${formatp(used[key])}`).join('\n')}
-
-${cpus[0] ? `_Total CPU Usage_
-${cpus[0].model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}
-_CPU Core(s) Usage (${cpus.length} Core CPU)_
-${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}`).join('\n\n')}` : ''}
-                `.trim()
+`
                 reply(respon)
+            }
+            break
+            case 'newcmd': case 'newcommand': {
+                new_cmd_list = `
+                ╠═══════✪「Commands List」✪═══════╠
+
+╠═══════✪「For Groups」✪═══════╠
+grouplink - To Get Group Link
+setgcpp [image] - To Change Group Picture
+setname [text] - To Change Group Name
+setdesc [text] - To Change Group Description
+resetgrouplink - To Reset Group Link
+add [user number with country code] - To Add Someone
+kick [reply/tag] - To Remove Someone 
+hidetag [text] - To Repost Something on Behalf of Bot
+tagall [text] - To Tag all members of a group
+antilinkall [on/off] - Anti-Link Protection
+antivirus [on/off] - Anti-Virus Protection
+antitoxic [on/off] - Anti-Toxic Protection
+antiwame [on/off]
+promote [reply/tag] - To Promote Someone to Admin
+demote [reply/tag] - To Demote Someone to Admin
+react [reply emoji]  - To React Someone on behalf of Bot
+
+╠═══════✪「Filter For Logos」✪═══════╠
+candy
+blackpinkneon
+deepsea
+scifi
+fiction
+berry
+fruitjuice
+biscuit
+wood
+chocolate
+matrix
+blood
+halloween
+wicker
+darkgold
+firework
+skeleton
+sand
+glue
+leaves
+magma
+lava
+rock
+bloodglas
+underwater
+textmaker
+honey
+ice
+watercolor
+multicolor
+snow
+harrypot
+harrypotter
+brokenglass
+waterpipe
+spooky
+circuit
+metallic
+demon
+sparklechristmas
+christmas
+3dchristmas
+3dbox
+waterdrop
+lion2
+papercut
+transformer
+neondevil
+3davengers
+3dstone
+3dstone2
+summertime
+thunder
+window
+graffiti
+graffitibike
+pornhub
+glitch
+blackpink
+glitch2
+glitch3
+3dspace
+lion
+3dneon
+greenneon
+bokeh
+holographic
+bear
+wolf
+joker
+dropwater
+dropwater2
+thewall
+neonlight
+natural
+carbon
+pencil
+blackpink2
+neon
+neonlight2
+toxic
+strawberry
+discovery
+1917
+sci_fi
+ancient
+fabric
+hoorror
+whitebear
+juice
+batman
+multicolor
+collwall
+wonderful
+cool
+sketch
+marvel
+foggy
+writing
+halloweenfire
+halloween
+watercolor
+classic`
+reply(new_cmd_list)
             }
             break
             case 'speedtest': {
@@ -8490,7 +8611,6 @@ break
 case 'alive': case 'panel': case 'list': case 'menu': case 'help': case '?': {
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-XeonBotInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
 	                let btn = [{
                                 urlButton: {
                                     displayText: 'YouTube 🍒',
