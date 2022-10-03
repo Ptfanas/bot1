@@ -2226,7 +2226,7 @@ if (isBanChat) return reply(mess.banChat)
 		if (!m.isGroup) return replay(`${mess.group}`)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
-		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')
+		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
         promted_msg = `User Promoted To Admin ✅`
 		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(promted_msg)).catch((err) => reply(jsonformat(err)))
 	}
@@ -8339,8 +8339,7 @@ break
                 let latensi = speed() - timestamp
                 neww = performance.now()
                 oldd = performance.now()
-                respon = `
-🚀 Response Speed ${latensi.toFixed(4)} Second \n\n⏱ Runtime : ${runtime(process.uptime())}
+                respon = `🚀 Response Speed ${latensi.toFixed(4)} Second \n\n⏱ Runtime : ${runtime(process.uptime())}
 
 💻 Server Info 
 RAM: ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
@@ -8352,10 +8351,9 @@ ${Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v=>v.
             }
             break
             case 'newcmd': case 'newcommand': {
-                new_cmd_list = `
-                ╠═══════✪「Commands List」✪═══════╠
+                new_cmd_list = `╠═══════✪「Commands List」✪═══════╣
 
-╠═══════✪「For Groups」✪═══════╠
+╠═══════✪「For Groups」✪═══════╣
 grouplink - To Get Group Link
 setgcpp [image] - To Change Group Picture
 setname [text] - To Change Group Name
@@ -8373,7 +8371,7 @@ promote [reply/tag] - To Promote Someone to Admin
 demote [reply/tag] - To Demote Someone to Admin
 react [reply emoji]  - To React Someone on behalf of Bot
 
-╠═══════✪「Filter For Logos」✪═══════╠
+╠═══════✪「Filter For Logos」✪═══════╣
 candy
 blackpinkneon
 deepsea
