@@ -213,7 +213,7 @@ module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
     try {
         var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
         var budy = (typeof m.text == 'string' ? m.text : '')
-        var prefix = prefa ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : prefa ?? global.prefix
+        var prefix = prefa ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "#" : prefa ?? global.prefix
         const isCmd = body.startsWith(prefix)
         const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
         const args = body.trim().split(/ +/).slice(1)
@@ -8627,132 +8627,12 @@ msg = `┌─❖
 │𝗢𝘄𝗻𝗲𝗿 𝗡𝗮𝗺𝗲 : ${global.ownername}
 │𝗢𝘄𝗻𝗲𝗿 𝗡𝗼. : ${global.owner}
 │𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
+└─「 𝙎𝙊𝙈𝙀 𝘾𝙊𝙈𝙈𝘼𝙉𝘿𝙎」
+│𝗠𝗲𝗻𝘂 : menu
+│𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀: newcmd
 └─────────────┈ ⳹
 
-╠═══════✪「Commands List」✪═══════╣
-
-╠═══════✪「For Groups」✪═══════╣
-grouplink - To Get Group Link
-setgcpp [image] - To Change Group Picture
-setname [text] - To Change Group Name
-setdesc [text] - To Change Group Description
-resetgrouplink - To Reset Group Link
-add [user number with country code] - To Add Someone
-kick [reply/tag] - To Remove Someone 
-hidetag [text] - To Repost Something on Behalf of Bot
-tagall [text] - To Tag all members of a group
-antilinkall [on/off] - Anti-Link Protection
-antivirus [on/off] - Anti-Virus Protection
-antitoxic [on/off] - Anti-Toxic Protection
-antiwame [on/off]
-promote [reply/tag] - To Promote Someone to Admin
-demote [reply/tag] - To Demote Someone to Admin
-react [reply emoji]  - To React Someone on behalf of Bot
-
-╠═══════✪「Filter For Logos」✪═══════╣
-candy
-blackpinkneon
-deepsea
-scifi
-fiction
-berry
-fruitjuice
-biscuit
-wood
-chocolate
-matrix
-blood
-halloween
-wicker
-darkgold
-firework
-skeleton
-sand
-glue
-leaves
-magma
-lava
-rock
-bloodglas
-underwater
-textmaker
-honey
-ice
-watercolor
-multicolor
-snow
-harrypot
-harrypotter
-brokenglass
-waterpipe
-spooky
-circuit
-metallic
-demon
-sparklechristmas
-christmas
-3dchristmas
-3dbox
-waterdrop
-lion2
-papercut
-transformer
-neondevil
-3davengers
-3dstone
-3dstone2
-summertime
-thunder
-window
-graffiti
-graffitibike
-pornhub
-glitch
-blackpink
-glitch2
-glitch3
-3dspace
-lion
-3dneon
-greenneon
-bokeh
-holographic
-bear
-wolf
-joker
-dropwater
-dropwater2
-thewall
-neonlight
-natural
-carbon
-pencil
-blackpink2
-neon
-neonlight2
-toxic
-strawberry
-discovery
-1917
-sci_fi
-ancient
-fabric
-hoorror
-whitebear
-juice
-batman
-multicolor
-collwall
-wonderful
-cool
-sketch
-marvel
-foggy
-writing
-halloweenfire
-halloween
-watercolor
-classic`
+`
 reply(msg)
 
 }
