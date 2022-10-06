@@ -62,7 +62,7 @@ global.location = "India" //ur location
 
 //bot bomdy 
 global.owner = ['917005619054']
-global.ownertag = '917005619054' //ur tag number
+global.ownertag = '23274560406' //ur tag number
 global.botname = 'PTF Bot' //ur bot name
 global.linkz = "https://primetechieforum.com" //your theme url which will be displayed on whatsapp
 global.websitex = "https://primetechieforum.com" //ur website to be displayed
@@ -78,7 +78,7 @@ global.err4r = fs.readFileSync("./XeonMedia/theme/2152484.jpg") //ur error pic
 global.thumb = fs.readFileSync("./XeonMedia/theme/2152484.jpg") //ur thumb pic
 
 //damtabase
-global.premium = ['918794972669'] //ur premium numbers
+global.premium = ['23274560406'] //ur premium numbers
 global.ntilinkytvid = []
 global.ntilinkytch = []
 global.ntilinkig = []
